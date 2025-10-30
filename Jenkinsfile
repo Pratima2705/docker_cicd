@@ -9,7 +9,10 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/pratima27/your-repo.git'
+                git branch: 'main',
+                    credentialsId: 'github',
+                    url: 'https://github.com/Pratima2705/docker_cicd.git'
+
             }
         }
 
