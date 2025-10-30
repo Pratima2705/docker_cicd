@@ -3,13 +3,13 @@ pipeline {
 
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub')
-        IMAGE_NAME = "yourusername/myapp"
+        IMAGE_NAME = "pratima27/myapp"
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/yourusername/your-repo.git'
+                git branch: 'main', url: 'https://github.com/pratima27/your-repo.git'
             }
         }
 
@@ -35,10 +35,10 @@ pipeline {
 
     post {
         success {
-            echo '✅ Docker image built and pushed successfully!'
+            echo '✅ Docker image built and pushed successfully to Docker Hub!'
         }
         failure {
-            echo '❌ Build failed. Check logs.'
+            echo '❌ Build failed. Check Jenkins logs.'
         }
     }
 }
